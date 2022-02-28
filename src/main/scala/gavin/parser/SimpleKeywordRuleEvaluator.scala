@@ -12,10 +12,10 @@ class SimpleKeywordRuleEvaluator extends Serializable {
    * @return
    */
   def eval(ast: ExprSymbol, targetStr: String, keywordEvalFunc: String => Boolean): Boolean = {
-    val defaultKeywordEvalFun = {keyword: String => targetStr.contains(keyword)}
+    val defaultKeywordEvalFunc = {keyword: String => targetStr.contains(keyword)}
 
     if (keywordEvalFunc == null) {
-      exprSymbolTraversal(ast, defaultKeywordEvalFun)
+      exprSymbolTraversal(ast, defaultKeywordEvalFunc)
     } else {
       exprSymbolTraversal(ast, keywordEvalFunc)
     }
