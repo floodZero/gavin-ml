@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>gavin</groupId>
+  <artifactId>ml</artifactId>
+  <packaging>pom</packaging>
+  <version>0.4.0</version>
+
+  <properties>
+    <scala.version>2.12.11</scala.version>
+    <scala-combinators.version>2.1.1</scala-combinators.version>
+    <scala-tools.version>2.15.2</scala-tools.version>
+    <spark.binary.version>2.12</spark.binary.version>
+    <scala-test.version>3.2.11</scala-test.version>
+  </properties>
+
+  <repositories>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.scala-lang.modules</groupId>
+      <artifactId>scala-parser-combinators_${spark.binary.version}</artifactId>
+      <version>${scala-combinators.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-tools</groupId>
+      <artifactId>maven-scala-plugin</artifactId>
+      <version>${scala-tools.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scalatest</groupId>
+      <artifactId>scalatest_${spark.binary.version}</artifactId>
+      <version>${scala-test.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <sourceDirectory>src/main/scala</sourceDirectory>
+    <testSourceDirectory>src/test/scala</testSourceDirectory>
+  </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.scala-tools</groupId>
+        <artifactId>maven-scala-plugin</artifactId>
+        <configuration>
+          <scalaVersion>${scala-tools.version}</scalaVersion>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>
