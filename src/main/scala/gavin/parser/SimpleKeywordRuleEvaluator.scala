@@ -46,8 +46,7 @@ class SimpleKeywordRuleEvaluator extends Serializable {
         keywordEvalFunc.apply(node.term)
 
       case notImplemented =>
-        SimpleKeywordRuleEvaluationException(s"Not implemented AST node. Class name: ${notImplemented.getClass.getName}")
-        false
+        throw SimpleKeywordRuleEvaluationException(s"Not implemented AST node. Class name: ${notImplemented.getClass.getName}")
     }
   }
 }

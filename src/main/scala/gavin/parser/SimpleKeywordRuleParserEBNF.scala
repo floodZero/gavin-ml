@@ -52,11 +52,9 @@ class SimpleKeywordRuleParserEBNF extends RegexParsers {
       case Success(result, _) =>
         result
       case Failure(msg, _) =>
-        SimpleKeywordRuleParseException(s"Parsing failed: $targetStr -> $msg")
-        null
+        throw SimpleKeywordRuleParseException(s"Parsing failed: $targetStr -> $msg")
       case Error(msg, _) =>
-        SimpleKeywordRuleParseException(s"Parsing error: $targetStr -> $msg")
-        null
+        throw SimpleKeywordRuleParseException(s"Parsing error: $targetStr -> $msg")
     }
   }
 
