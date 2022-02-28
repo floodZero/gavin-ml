@@ -21,7 +21,7 @@ class SimpleKeywordRuleEvaluatorSuite extends AnyFlatSpec with should.Matchers {
     )
 
     testPairs.foreach { case (targetStr, expectedReturn) =>
-      evaluator.eval(testRuleAST, targetStr, null) should be(expectedReturn)
+      evaluator.eval(testRuleAST, targetStr) should be(expectedReturn)
     }
   }
 }

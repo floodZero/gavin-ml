@@ -11,7 +11,7 @@ class SimpleKeywordRuleEvaluator extends Serializable {
    * @param keywordEvalFunc    Function to evaluate "Keyword" symbol
    * @return
    */
-  def eval(ast: ExprSymbol, targetStr: String, keywordEvalFunc: String => Boolean): Boolean = {
+  def eval(ast: ExprSymbol, targetStr: String, keywordEvalFunc: String => Boolean = null): Boolean = {
     val defaultKeywordEvalFunc = {keyword: String => targetStr.contains(keyword)}
 
     if (keywordEvalFunc == null) {
