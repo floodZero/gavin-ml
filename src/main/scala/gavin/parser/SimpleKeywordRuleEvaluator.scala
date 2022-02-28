@@ -3,7 +3,7 @@ package gavin.parser
 class SimpleKeywordRuleEvaluator extends Serializable {
   /**
    * Evaluator uses custom function to evaluate Keyword symbol.
-   * Evaluated by deep first search(DFS).
+   * Evaluated by depth first search(DFS).
    * Keyword is scan and evaluated every traversal.
    *
    * @param ast                Root of Abstract Syntax Tree (AST) of rule to evaluate
